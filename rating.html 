@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FixIt - Vurderinger</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="rating-page">
+    <div class="top-nav">
+        <button class="back-btn" onclick="location.href='home.html'">←</button>
+        <h2>Vurderinger</h2>
+        <div></div>
+    </div>
+
+    <div class="rating-container">
+        <!-- Completed Jobs to Rate -->
+        <div class="rating-section">
+            <h3>Fullførte jobber å vurdere</h3>
+            
+            <div class="job-to-rate">
+                <div class="job-rate-header">
+                    <div class="profile-mini">
+                        <div class="profile-avatar">K</div>
+                        <div>
+                            <div class="profile-name">Kari Hansen</div>
+                            <div class="job-name">Rengjøring av leilighet</div>
+                        </div>
+                    </div>
+                    <div class="job-date">Fullført 2. jan 2025</div>
+                </div>
+
+                <div class="rating-form">
+                    <div class="star-rating">
+                        <span class="star" data-rating="1" onclick="setRating(this, 0)">☆</span>
+                        <span class="star" data-rating="2" onclick="setRating(this, 0)">☆</span>
+                        <span class="star" data-rating="3" onclick="setRating(this, 0)">☆</span>
+                        <span class="star" data-rating="4" onclick="setRating(this, 0)">☆</span>
+                        <span class="star" data-rating="5" onclick="setRating(this, 0)">☆</span>
+                    </div>
+
+                    <textarea class="review-text" placeholder="Skriv en anmeldelse (valgfritt)..."></textarea>
+
+                    <button class="submit-rating-btn" onclick="submitRating(0)">Send vurdering</button>
+                </div>
+            </div>
+
+            <div class="job-to-rate">
+                <div class="job-rate-header">
+                    <div class="profile-mini">
+                        <div class="profile-avatar">A</div>
+                        <div>
+                            <div class="profile-name">Anne Johansen</div>
+                            <div class="job-name">Hjelp med hagearbeid</div>
+                        </div>
+                    </div>
+                    <div class="job-date">Fullført 28. des 2024</div>
+                </div>
+
+                <div class="rating-form">
+                    <div class="star-rating">
+                        <span class="star" data-rating="1" onclick="setRating(this, 1)">☆</span>
+                        <span class="star" data-rating="2" onclick="setRating(this, 1)">☆</span>
+                        <span class="star" data-rating="3" onclick="setRating(this, 1)">☆</span>
+                        <span class="star" data-rating="4" onclick="setRating(this, 1)">☆</span>
+                        <span class="star" data-rating="5" onclick="setRating(this, 1)">☆</span>
+                    </div>
+
+                    <textarea class="review-text" placeholder="Skriv en anmeldelse (valgfritt)..."></textarea>
+
+                    <button class="submit-rating-btn" onclick="submitRating(1)">Send vurdering</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Your Ratings -->
+        <div class="rating-section">
+            <h3>Dine mottatte vurderinger</h3>
+
+            <div class="rating-stats">
+                <div class="rating-average">
+                    <div class="big-rating">4.8</div>
+                    <div class="rating-stars">⭐⭐⭐⭐⭐</div>
+                    <div class="rating-count">24 vurderinger</div>
+                </div>
+
+                <div class="rating-breakdown">
+                    <div class="rating-bar">
+                        <span>5 ⭐</span>
+                        <div class="bar"><div class="fill" style="width: 85%"></div></div>
+                        <span>20</span>
+                    </div>
+                    <div class="rating-bar">
+                        <span>4 ⭐</span>
+                        <div class="bar"><div class="fill" style="width: 10%"></div></div>
+                        <span>3</span>
+                    </div>
+                    <div class="rating-bar">
+                        <span>3 ⭐</span>
+                        <div class="bar"><div class="fill" style="width: 5%"></div></div>
+                        <span>1</span>
+                    </div>
+                    <div class="rating-bar">
+                        <span>2 ⭐</span>
+                        <div class="bar"><div class="fill" style="width: 0%"></div></div>
+                        <span>0</span>
+                    </div>
+                    <div class="rating-bar">
+                        <span>1 ⭐</span>
+                        <div class="bar"><div class="fill" style="width: 0%"></div></div>
+                        <span>0</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="reviews-list">
+                <div class="review-item">
+                    <div class="review-header">
+                        <div class="profile-mini">
+                            <div class="profile-avatar">L</div>
+                            <div>
+                                <div class="profile-name">Liv Andersen</div>
+                                <div class="review-stars">⭐⭐⭐⭐⭐</div>
+                            </div>
+                        </div>
+                        <div class="review-date">3 dager siden</div>
+                    </div>
+                    <div class="review-text">
+                        Super hjelp! Jonas var punktlig, vennlig og gjorde en kjempejobb. Anbefaler på det sterkeste!
+                    </div>
+                    <div class="review-job">Handle mat</div>
+                </div>
+
+                <div class="review-item">
+                    <div class="review-header">
+                        <div class="profile-mini">
+                            <div class="profile-avatar">P</div>
+                            <div>
+                                <div class="profile-name">Per Olsen</div>
+                                <div class="review-stars">⭐⭐⭐⭐⭐</div>
+                            </div>
+                        </div>
+                        <div class="review-date">1 uke siden</div>
+                    </div>
+                    <div class="review-text">
+                        Veldig fornøyd! Rask og effektiv. Kom akkurat når avtalt og gjorde jobben perfekt.
+                    </div>
+                    <div class="review-job">Hjelp til flytting</div>
+                </div>
+
+                <div class="review-item">
+                    <div class="review-header">
+                        <div class="profile-mini">
+                            <div class="profile-avatar">M</div>
+                            <div>
+                                <div class="profile-name">Maria Berg</div>
+                                <div class="review-stars">⭐⭐⭐⭐</div>
+                            </div>
+                        </div>
+                        <div class="review-date">2 uker siden</div>
+                    </div>
+                    <div class="review-text">
+                        Bra jobb! Kom litt sent men gjorde en god innsats.
+                    </div>
+                    <div class="review-job">Snørydding</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottom Navigation -->
+    <div class="bottom-nav">
+        <div class="nav-item" onclick="location.href='home.html'">
+            <div class="nav-icon">🏠</div>
+            <div class="nav-label">Hjem</div>
+        </div>
+        <div class="nav-item" onclick="location.href='communication.html'">
+            <div class="nav-icon">💬</div>
+            <div class="nav-label">Chat</div>
+        </div>
+        <div class="nav-item" onclick="location.href='post-job.html'">
+            <div class="nav-icon">➕</div>
+            <div class="nav-label">Ny jobb</div>
+        </div>
+        <div class="nav-item active" onclick="location.href='rating.html'">
+            <div class="nav-icon">⭐</div>
+            <div class="nav-label">Rangeringer</div>
+        </div>
+        <div class="nav-item">
+            <div class="nav-icon">👤</div>
+            <div class="nav-label">Profil</div>
+        </div>
+    </div>
+
+    <script src="rating.js"></script>
+</body>
+</html>

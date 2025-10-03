@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FixIt - Chat</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="communication-page">
+    <div class="top-nav">
+        <button class="back-btn" onclick="location.href='home.html'">←</button>
+        <h2>Meldinger</h2>
+        <div></div>
+    </div>
+
+    <div class="chat-container">
+        <!-- Chat List -->
+        <div class="chat-list" id="chatList">
+            <div class="chat-item active" onclick="openChat(0)">
+                <div class="chat-avatar">A</div>
+                <div class="chat-info">
+                    <div class="chat-name">Anne Johansen</div>
+                    <div class="chat-preview">Hei! Er du fortsatt interessert?</div>
+                    <div class="chat-time">5 min siden</div>
+                </div>
+                <div class="unread-badge">2</div>
+            </div>
+
+            <div class="chat-item" onclick="openChat(1)">
+                <div class="chat-avatar">K</div>
+                <div class="chat-info">
+                    <div class="chat-name">Kari Hansen</div>
+                    <div class="chat-preview">Takk for hjelpen!</div>
+                    <div class="chat-time">1 time siden</div>
+                </div>
+            </div>
+
+            <div class="chat-item" onclick="openChat(2)">
+                <div class="chat-avatar">P</div>
+                <div class="chat-info">
+                    <div class="chat-name">Per Olsen</div>
+                    <div class="chat-preview">Når kan du starte?</div>
+                    <div class="chat-time">I går</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Chat Window -->
+        <div class="chat-window" id="chatWindow" style="display: none;">
+            <div class="chat-header">
+                <button class="back-btn" onclick="closeChat()">←</button>
+                <div class="chat-avatar">A</div>
+                <div>
+                    <div class="chat-name" id="currentChatName">Anne Johansen</div>
+                    <div class="chat-status">Aktiv nå</div>
+                </div>
+            </div>
+
+            <div class="messages-container" id="messagesContainer">
+                <div class="message received">
+                    <div class="message-avatar">A</div>
+                    <div class="message-content">
+                        <div class="message-text">Hei! Jeg så at du søkte på hagearbeid-jobben min.</div>
+                        <div class="message-time">14:30</div>
+                    </div>
+                </div>
+
+                <div class="message sent">
+                    <div class="message-content">
+                        <div class="message-text">Hei! Ja, jeg er veldig interessert. Jeg har erfaring med hagearbeid.</div>
+                        <div class="message-time">14:32</div>
+                    </div>
+                </div>
+
+                <div class="message received">
+                    <div class="message-avatar">A</div>
+                    <div class="message-content">
+                        <div class="message-text">Flott! Kan du komme i morgen kl. 14:00?</div>
+                        <div class="message-time">14:35</div>
+                    </div>
+                </div>
+
+                <div class="message sent">
+                    <div class="message-content">
+                        <div class="message-text">Ja, det passer perfekt! 👍</div>
+                        <div class="message-time">14:36</div>
+                    </div>
+                </div>
+
+                <div class="message received">
+                    <div class="message-avatar">A</div>
+                    <div class="message-content">
+                        <div class="message-text">Er du fortsatt interessert?</div>
+                        <div class="message-time">15:10</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="message-input-container">
+                <input type="text" id="messageInput" placeholder="Skriv en melding...">
+                <button class="send-btn" onclick="sendMessage()">Send</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottom Navigation -->
+    <div class="bottom-nav">
+        <div class="nav-item" onclick="location.href='home.html'">
+            <div class="nav-icon">🏠</div>
+            <div class="nav-label">Hjem</div>
+        </div>
+        <div class="nav-item active" onclick="location.href='communication.html'">
+            <div class="nav-icon">💬</div>
+            <div class="nav-label">Chat</div>
+        </div>
+        <div class="nav-item" onclick="location.href='post-job.html'">
+            <div class="nav-icon">➕</div>
+            <div class="nav-label">Ny jobb</div>
+        </div>
+        <div class="nav-item" onclick="location.href='rating.html'">
+            <div class="nav-icon">⭐</div>
+            <div class="nav-label">Rangeringer</div>
+        </div>
+        <div class="nav-item">
+            <div class="nav-icon">👤</div>
+            <div class="nav-label">Profil</div>
+        </div>
+    </div>
+
+    <script src="communication.js"></script>
+</body>
+</html>

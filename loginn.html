@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FixIt - Logg inn</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="login-page">
+    <div class="header">
+        <h1>FixIt</h1>
+        <p>Logg inn med BankID</p>
+    </div>
+    
+    <div class="login-container">
+        <div class="form-group">
+            <label>Personnummer (11 siffer)</label>
+            <input type="text" id="personnummer" placeholder="01234567890" maxlength="11">
+        </div>
+        
+        <button class="bankid-btn" onclick="loginWithBankID()">
+            🔐 Logg inn med BankID
+        </button>
+        
+        <p style="text-align: center; margin-top: 20px; color: #5D6E75;">
+            Har du ikke konto? <a href="index.html" style="color: #8BA794; text-decoration: none;">Registrer deg</a>
+        </p>
+        
+        <p style="text-align: center; margin-top: 10px;">
+            <a href="index.html" style="color: #8BA794; text-decoration: none;">Tilbake</a>
+        </p>
+    </div>
+
+    <script src="login.js"></script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FixIt - Finn jobber</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="home-page">
+    <div class="top-nav">
+        <h2>FixIt</h2>
+        <div class="user-info">
+            <span id="userName">Jonas</span>
+            <button class="icon-btn" onclick="location.href='post-job.html'">➕</button>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <!-- Location Filter -->
+        <div class="location-filter">
+            <button class="location-btn active" onclick="filterByLocation('all')">Alle områder</button>
+            <button class="location-btn" onclick="filterByLocation('Halden')">Halden</button>
+            <button class="location-btn" onclick="filterByLocation('Fredrikstad')">Fredrikstad</button>
+            <button class="location-btn" onclick="filterByLocation('Sarpsborg')">Sarpsborg</button>
+        </div>
+
+        <!-- Category Filter -->
+        <div class="category-filter">
+            <select id="categorySelect" onchange="filterByCategory()">
+                <option value="all">Alle kategorier</option>
+                <option value="Barnepass">👶 Barnepass</option>
+                <option value="Dyrepass">🐕 Dyrepass</option>
+                <option value="Snørydding">❄️ Snørydding</option>
+                <option value="Hage">🌳 Hagearbeid</option>
+                <option value="Trearbeid">🪓 Trearbeid</option>
+                <option value="Rengjøring">🧹 Rengjøring</option>
+                <option value="Flytting">📦 Flytting</option>
+                <option value="Handling">🛒 Handling</option>
+                <option value="Maling">🎨 Maling</option>
+                <option value="Annet">💼 Annet</option>
+            </select>
+        </div>
+
+        <!-- Jobs List -->
+        <div id="jobsList">
+            <!-- Jobs will be loaded by JavaScript -->
+        </div>
+    </div>
+
+    <!-- Bottom Navigation -->
+    <div class="bottom-nav">
+        <div class="nav-item active" onclick="location.href='home.html'">
+            <div class="nav-icon">🏠</div>
+            <div class="nav-label">Hjem</div>
+        </div>
+        <div class="nav-item" onclick="location.href='communication.html'">
+            <div class="nav-icon">💬</div>
+            <div class="nav-label">Chat</div>
+        </div>
+        <div class="nav-item" onclick="location.href='post-job.html'">
+            <div class="nav-icon">➕</div>
+            <div class="nav-label">Ny jobb</div>
+        </div>
+        <div class="nav-item" onclick="location.href='rating.html'">
+            <div class="nav-icon">⭐</div>
+            <div class="nav-label">Rangeringer</div>
+        </div>
+        <div class="nav-item">
+            <div class="nav-icon">👤</div>
+            <div class="nav-label">Profil</div>
+        </div>
+    </div>
+
+    <script src="home.js"></script>
+</body>
+</html>

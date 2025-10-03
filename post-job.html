@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FixIt - Legg ut jobb</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="post-job-page">
+    <div class="detail-header">
+        <button class="back-btn" onclick="location.href='home.html'">← Tilbake</button>
+        <h2>Legg ut en jobb</h2>
+    </div>
+
+    <div class="post-job-container">
+        <form id="postJobForm">
+            <!-- Job Category -->
+            <div class="form-section">
+                <h3>Jobbkategori</h3>
+                <select id="jobCategory" required>
+                    <option value="">Velg kategori</option>
+                    <option value="Barnepass">👶 Barnepass</option>
+                    <option value="Dyrepass">🐕 Dyrepass</option>
+                    <option value="Snørydding">❄️ Snørydding</option>
+                    <option value="Hage">🌳 Hagearbeid</option>
+                    <option value="Trearbeid">🪓 Trearbeid</option>
+                    <option value="Rengjøring">🧹 Rengjøring</option>
+                    <option value="Flytting">📦 Flytting</option>
+                    <option value="Handling">🛒 Handling</option>
+                    <option value="Maling">🎨 Maling</option>
+                    <option value="Annet">💼 Annet</option>
+                </select>
+            </div>
+
+            <!-- Job Title -->
+            <div class="form-section">
+                <h3>Jobbtittel</h3>
+                <input type="text" id="jobTitle" required placeholder="F.eks. 'Hjelp med snørydding'">
+            </div>
+
+            <!-- Job Description -->
+            <div class="form-section">
+                <h3>Beskrivelse</h3>
+                <textarea id="jobDescription" required rows="6" placeholder="Beskriv jobben i detalj. Hva skal gjøres? Hva forventes? Er det noe utstyr tilgjengelig?"></textarea>
+            </div>
+
+            <!-- Location -->
+            <div class="form-section">
+                <h3>Sted</h3>
+                <select id="jobLocation" required>
+                    <option value="">Velg sted</option>
+                    <option value="Halden">Halden</option>
+                    <option value="Fredrikstad">Fredrikstad</option>
+                    <option value="Sarpsborg">Sarpsborg</option>
+                </select>
+                
+                <input type="text" id="jobAddress" placeholder="Adresse (valgfritt)" style="margin-top: 10px;">
+            </div>
+
+            <!-- Date and Time -->
+            <div class="form-section">
+                <h3>Når trenger du hjelp?</h3>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Dato</label>
+                        <input type="date" id="jobDate" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Klokkeslett</label>
+                        <input type="time" id="jobTime" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Estimert varighet</label>
+                    <select id="jobDuration" required>
+                        <option value="">Velg varighet</option>
+                        <option value="30 minutter">30 minutter</option>
+                        <option value="1 time">1 time</option>
+                        <option value="1-2 timer">1-2 timer</option>
+                        <option value="2-3 timer">2-3 timer</option>
+                        <option value="3-4 timer">3-4 timer</option>
+                        <option value="Halv dag">Halv dag</option>
+                        <option value="Hel dag">Hel dag</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Payment -->
+            <div class="form-section">
+                <h3>Betaling</h3>
+                
+                <div class="payment-type-options">
+                    <label class="radio-option">
+                        <input type="radio" name="paymentType" value="fixed" checked onchange="togglePaymentInput()">
+                        <span>Fast pris</span>
+                    </label>
+                    
+                    <label class="radio-option">
+                        <input type="radio" name="paymentType" value="negotiable" onchange="togglePaymentInput()">
+                        <span>Til forhandling</span>
+                    </label>
+                </div>
+
+                <div id="priceInput" class="form-group">
+                    <label>Beløp (NOK)</label>
+                    <input type="number" id="jobPrice" placeholder="500" min="0">
+                </div>
+            </div>
+
+            <!-- Additional Requirements -->
+            <div class="form-section">
+                <h3>Krav (valgfritt)</h3>
+                
+                <label class="checkbox-label">
+                    <input type="checkbox" id="requireVerified">
+                    <span>Må være verifisert bruker</span>
+                </label>
+                
+                <label class="checkbox-label">
+                    <input type="checkbox" id="requireExperience">
+                    <span>Må ha erfaring med lignende jobber</span>
+                </label>
+
+                <label class="checkbox-label">
+                    <input type="checkbox" id="requireReferences">
+                    <span>Må ha gode referanser</span>
+                </label>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="submit-btn">
+                Publiser jobb
+            </button>
+        </form>
+    </div>
+
+    <script src="post-job.js"></script>
+</body>
+</html>

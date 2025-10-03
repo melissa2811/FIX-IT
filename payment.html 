@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FixIt - Betaling</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="payment-page">
+    <div class="detail-header">
+        <button class="back-btn" onclick="location.href='home.html'">← Tilbake</button>
+        <h2>Velg betalingsmetode</h2>
+    </div>
+
+    <div class="payment-container">
+        <div class="payment-methods">
+            <div class="payment-option selected" id="vippsOption" onclick="selectPayment('vipps')">
+                <div class="payment-icon">📱</div>
+                <div class="payment-name">Vipps</div>
+                <div class="payment-desc">Rask og sikker betaling</div>
+            </div>
+            
+            <div class="payment-option" id="bankOption" onclick="selectPayment('bank')">
+                <div class="payment-icon">🏦</div>
+                <div class="payment-name">Bankkonto</div>
+                <div class="payment-desc">Direkte bankoverføring</div>
+            </div>
+        </div>
+
+        <!-- Vipps Payment -->
+        <div id="vippsPayment" class="payment-details">
+            <div class="payment-info-box">
+                <h3>Betaling via Vipps</h3>
+                <p>Du vil bli videresendt til Vipps-appen for å fullføre betalingen.</p>
+            </div>
+
+            <div class="form-group">
+                <label>Vipps-nummer</label>
+                <input type="tel" id="vippsNumber" placeholder="123 45 678" maxlength="11">
+            </div>
+
+            <div class="info-note">
+                <p>💡 Beløpet holdes av FixIt til jobben er fullført og godkjent av begge parter.</p>
+            </div>
+        </div>
+
+        <!-- Bank Account Payment -->
+        <div id="bankPayment" class="payment-details" style="display: none;">
+            <div class="payment-info-box">
+                <h3>Betaling via bankkonto</h3>
+                <p>Oppgi din bankkontoinformasjon for overføring.</p>
+            </div>
+
+            <div class="form-group">
+                <label>Kontonummer</label>
+                <input type="text" id="accountNumber" placeholder="1234 56 78901" maxlength="13">
+            </div>
+
+            <div class="form-group">
+                <label>Bankens navn</label>
+                <input type="text" id="bankName" placeholder="F.eks. DNB, Nordea">
+            </div>
+
+            <div class="info-note">
+                <p>💡 Beløpet holdes av FixIt til jobben er fullført og godkjent av begge parter.</p>
+            </div>
+        </div>
+
+        <!-- Payment Summary -->
+        <div class="payment-summary">
+            <h3>Oppsummering</h3>
+            <div class="summary-row">
+                <span>Jobb:</span>
+                <span id="paymentJob">Hjelp med hagearbeid</span>
+            </div>
+            <div class="summary-row">
+                <span>Dato:</span>
+                <span id="paymentDate">5. januar 2025</span>
+            </div>
+            <div class="summary-row">
+                <span>Varighet:</span>
+                <span id="paymentDuration">2-3 timer</span>
+            </div>
+            <div class="summary-divider"></div>
+            <div class="summary-row total">
+                <span>Totalt:</span>
+                <span id="paymentAmount">400 kr</span>
+            </div>
+        </div>
+
+        <button class="confirm-btn" onclick="confirmPayment()">Bekreft betaling</button>
+    </div>
+
+    <script src="payment.js"></script>
+</body>
+</html>

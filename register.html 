@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FixIt - Registrering</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="register-page">
+    <div class="header">
+        <h1>FixIt</h1>
+        <p id="registerType">Registrer deg som hjelper</p>
+    </div>
+
+    <div class="register-container">
+        <form id="registerForm">
+            <!-- Profile Picture -->
+            <div class="form-section">
+                <h3>Profilbilde</h3>
+                <div class="profile-upload">
+                    <div class="profile-preview" id="profilePreview">
+                        <span>📷</span>
+                    </div>
+                    <input type="file" id="profilePic" accept="image/*" onchange="previewImage(event)">
+                    <label for="profilePic" class="upload-btn">Last opp bilde</label>
+                </div>
+            </div>
+
+            <!-- Personal Information -->
+            <div class="form-section">
+                <h3>Personlig informasjon</h3>
+                
+                <div class="form-group">
+                    <label>Fornavn *</label>
+                    <input type="text" id="firstName" required placeholder="Skriv inn fornavn">
+                </div>
+
+                <div class="form-group">
+                    <label>Etternavn *</label>
+                    <input type="text" id="lastName" required placeholder="Skriv inn etternavn">
+                </div>
+
+                <div class="form-group">
+                    <label>Alder *</label>
+                    <input type="number" id="age" required placeholder="Skriv inn alder" min="13" max="75">
+                </div>
+
+                <div class="form-group">
+                    <label>E-post *</label>
+                    <input type="email" id="email" required placeholder="din@epost.no">
+                </div>
+
+                <div class="form-group">
+                    <label>Telefonnummer *</label>
+                    <input type="tel" id="phone" required placeholder="123 45 678">
+                </div>
+            </div>
+
+            <!-- Address -->
+            <div class="form-section">
+                <h3>Adresse</h3>
+                
+                <div class="form-group">
+                    <label>Gateadresse *</label>
+                    <input type="text" id="street" required placeholder="Gatenavn 123">
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Postnummer *</label>
+                        <input type="text" id="postalCode" required placeholder="1234">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Poststed *</label>
+                        <select id="city" required>
+                            <option value="">Velg sted</option>
+                            <option value="Halden">Halden</option>
+                            <option value="Fredrikstad">Fredrikstad</option>
+                            <option value="Sarpsborg">Sarpsborg</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Payment Information -->
+            <div class="form-section">
+                <h3>Betalingsinformasjon</h3>
+                
+                <div class="payment-methods-register">
+                    <label class="payment-method-option">
+                        <input type="radio" name="paymentMethod" value="vipps" checked>
+                        <div class="method-card">
+                            <span class="method-icon">📱</span>
+                            <span>Vipps</span>
+                        </div>
+                    </label>
+
+                    <label class="payment-method-option">
+                        <input type="radio" name="paymentMethod" value="bank">
+                        <div class="method-card">
+                            <span class="method-icon">🏦</span>
+                            <span>Bankkonto</span>
+                        </div>
+                    </label>
+                </div>
+
+                <div id="vippsInfo" class="payment-info">
+                    <div class="form-group">
+                        <label>Vipps-nummer *</label>
+                        <input type="tel" id="vippsNumber" placeholder="123 45 678">
+                    </div>
+                </div>
+
+                <div id="bankInfo" class="payment-info" style="display: none;">
+                    <div class="form-group">
+                        <label>Kontonummer *</label>
+                        <input type="text" id="accountNumber" placeholder="1234 56 78901">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Parent Consent (for under 18) -->
+            <div class="form-section" id="parentConsent" style="display: none;">
+                <h3>Foreldresamtykke</h3>
+                <div class="info-box">
+                    <p>⚠️ Du er under 18 år. Vi trenger foreldresamtykke.</p>
+                </div>
+                
+                <div class="form-group">
+                    <label>Forelder/foresatt navn *</label>
+                    <input type="text" id="parentName" placeholder="Navn på forelder/foresatt">
+                </div>
+
+                <div class="form-group">
+                    <label>Forelder/foresatt telefon *</label>
+                    <input type="tel" id="parentPhone" placeholder="123 45 678">
+                </div>
+
+                <div class="form-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="parentApproval">
+                        <span>Jeg bekrefter at jeg har tillatelse fra min forelder/foresatt</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Terms and Conditions -->
+            <div class="form-section">
+                <div class="form-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="terms" required>
+                        <span>Jeg godtar vilkårene og personvernserklæringen *</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- BankID Confirmation -->
+            <button type="submit" class="bankid-btn">
+                🔐 Bekreft med BankID
+            </button>
+
+            <p style="text-align: center; margin-top: 20px;">
+                <a href="index.html" style="color: #8BA794; text-decoration: none;">Tilbake til forsiden</a>
+            </p>
+        </form>
+    </div>
+
+    <script src="register.js"></script>
+</body>
+</html> 
