@@ -127,6 +127,60 @@
         </div>
     </div>
 
+    <!-- Bottom Navigation -->
+<div class="bottom-nav">
+    <div class="nav-item" onclick="location.href='home.html'">
+        <div class="nav-icon">🏠</div>
+        <div class="nav-label">Hjem</div>
+    </div>
+    <div class="nav-item" onclick="location.href='communication.html'">
+        <div class="nav-icon">💬</div>
+        <div class="nav-label">Chat</div>
+    </div>
+    <div class="nav-item" onclick="location.href='post-job.html'">
+        <div class="nav-icon">➕</div>
+        <div class="nav-label">Ny jobb</div>
+    </div>
+    <div class="nav-item" onclick="location.href='rating.html'">
+        <div class="nav-icon">⭐</div>
+        <div class="nav-label">Vurderinger</div>
+    </div>
+    <div class="nav-item" onclick="showProfileMenu()">
+        <div class="nav-icon">👤</div>
+        <div class="nav-label">Meny</div>
+    </div>
+</div>
+
+<!-- Profile Menu Popup -->
+<div id="profileMenu" class="profile-menu" style="display: none;">
+    <div class="profile-menu-overlay" onclick="closeProfileMenu()"></div>
+    <div class="profile-menu-content">
+        <div class="profile-menu-header">
+            <h3>Meny</h3>
+            <button class="close-menu-btn" onclick="closeProfileMenu()">✕</button>
+        </div>
+        <div class="profile-menu-items">
+            <div class="menu-item" onclick="location.href='profile.html'">
+                <span class="menu-icon">👤</span>
+                <span class="menu-text">Min Profil</span>
+            </div>
+            <div class="menu-item" onclick="location.href='settings.html'">
+                <span class="menu-icon">⚙️</span>
+                <span class="menu-text">Innstillinger</span>
+            </div>
+            <div class="menu-item" onclick="location.href='payment.html'">
+                <span class="menu-icon">💳</span>
+                <span class="menu-text">Betalingsmetoder</span>
+            </div>
+            <div class="menu-divider"></div>
+            <div class="menu-item menu-item-danger" onclick="logout()">
+                <span class="menu-icon">🚪</span>
+                <span class="menu-text">Logg ut</span>
+            </div>
+        </div>
+    </div>
+</div>
+
     <script src="script.js"></script>
 </body>
 </html>
