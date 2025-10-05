@@ -207,32 +207,39 @@
             <div class="nav-label">Profil</div>
         </div>
     </div>
-
-    <!-- Bottom Navigation -->
-<div class="bottom-nav">
-    <div class="nav-item" onclick="location.href='home.html'">
-        <div class="nav-icon">🏠</div>
-        <div class="nav-label">Hjem</div>
-    </div>
-    <div class="nav-item" onclick="location.href='communication.html'">
-        <div class="nav-icon">💬</div>
-        <div class="nav-label">Chat</div>
-    </div>
-    <div class="nav-item" onclick="location.href='post-job.html'">
-        <div class="nav-icon">➕</div>
-        <div class="nav-label">Ny jobb</div>
-    </div>
-    <div class="nav-item" onclick="location.href='rating.html'">
-        <div class="nav-icon">⭐</div>
-        <div class="nav-label">Vurderinger</div>
-    </div>
-    <div class="nav-item" onclick="showProfileMenu()">
-        <div class="nav-icon">👤</div>
-        <div class="nav-label">Meny</div>
+<!-- Top Navigation Bar -->
+<div class="top-nav-main">
+    <div class="nav-container">
+        <div class="nav-brand" onclick="location.href='home.html'">
+            <span class="brand-logo">FixIt</span>
+        </div>
+        
+        <div class="nav-links">
+            <div class="nav-link" onclick="location.href='home.html'">
+                <span class="nav-icon">🏠</span>
+                <span class="nav-text">Hjem</span>
+            </div>
+            <div class="nav-link" onclick="location.href='communication.html'">
+                <span class="nav-icon">💬</span>
+                <span class="nav-text">Chat</span>
+            </div>
+            <div class="nav-link" onclick="location.href='post-job.html'">
+                <span class="nav-icon">➕</span>
+                <span class="nav-text">Ny jobb</span>
+            </div>
+            <div class="nav-link" onclick="location.href='rating.html'">
+                <span class="nav-icon">⭐</span>
+                <span class="nav-text">Vurderinger</span>
+            </div>
+            <div class="nav-link" onclick="showProfileMenu()">
+                <span class="nav-icon">👤</span>
+                <span class="nav-text">Meny</span>
+            </div>
+        </div>
     </div>
 </div>
 
-<!-- Profile Menu Popup -->
+<!-- Profile Menu Popup (same as before) -->
 <div id="profileMenu" class="profile-menu" style="display: none;">
     <div class="profile-menu-overlay" onclick="closeProfileMenu()"></div>
     <div class="profile-menu-content">
@@ -261,7 +268,6 @@
         </div>
     </div>
 </div>
-
     <script src="settings.js"></script>
 </body>
 </html>
