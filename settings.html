@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FixIt - Innstillinger</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="top-nav">
+        <button class="back-btn" onclick="location.href='profile.html'">←</button>
+        <h2>Innstillinger</h2>
+        <div style="width: 30px;"></div>
+    </div>
+
+    <div class="settings-container">
+        <div id="successMessage" class="success-message">
+            ✓ Endringer lagret!
+        </div>
+
+        <!-- Profile Picture -->
+        <div class="settings-section">
+            <div class="section-title">📷 Profilbilde</div>
+            <div class="profile-photo-section">
+                <div class="profile-preview" id="profilePreview">J</div>
+                <input type="file" id="profilePic" accept="image/*" onchange="previewImage(event)">
+                <label for="profilePic" class="upload-btn">Last opp nytt bilde</label>
+            </div>
+        </div>
+
+        <!-- Personal Information -->
+        <div class="settings-section">
+            <div class="section-title">👤 Personlig informasjon</div>
+            
+            <div class="form-group">
+                <label>Fornavn</label>
+                <input type="text" id="firstName" placeholder="Fornavn">
+            </div>
+
+            <div class="form-group">
+                <label>Etternavn</label>
+                <input type="text" id="lastName" placeholder="Etternavn">
+            </div>
+
+            <div class="form-group">
+                <label>E-post</label>
+                <input type="email" id="email" placeholder="din@epost.no">
+            </div>
+
+            <div class="form-group">
+                <label>Telefonnummer</label>
+                <input type="tel" id="phone" placeholder="123 45 678">
+            </div>
+
+            <div class="form-group">
+                <label>Sted</label>
+                <select id="city">
+                    <option value="">Velg sted</option>
+                    <option value="Halden">Halden</option>
+                    <option value="Fredrikstad">Fredrikstad</option>
+                    <option value="Sarpsborg">Sarpsborg</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Om meg</label>
+                <textarea id="bio" rows="4" placeholder="Fortell litt om deg selv..."></textarea>
+            </div>
+
+            <button class="btn btn-primary" onclick="savePersonalInfo()">💾 Lagre endringer</button>
+        </div>
+
+        <!-- Notifications -->
+        <div class="settings-section">
+            <div class="section-title">🔔 Varslinger</div>
+            
+            <div class="setting-item">
+                <div>
+                    <div class="setting-label">Nye jobber</div>
+                    <div class="setting-description">Få varsel om nye jobber i ditt område</div>
+                </div>
+                <label class="toggle-switch">
+                    <input type="checkbox" id="notifyNewJobs" checked>
+                    <span class="slider"></span>
+                </label>
+            </div>
+
+            <div class="setting-item">
+                <div>
+                    <div class="setting-label">Meldinger</div>
+                    <div class="setting-description">Få varsel om nye meldinger</div>
+                </div>
+                <label class="toggle-switch">
+                    <input type="checkbox" id="notifyMessages" checked>
+                    <span class="slider"></span>
+                </label>
+            </div>
+
+            <div class="setting-item">
+                <div>
+                    <div class="setting-label">Vurderinger</div>
+                    <div class="setting-description">Få varsel når noen vurderer deg</div>
+                </div>
+                <label class="toggle-switch">
+                    <input type="checkbox" id="notifyRatings" checked>
+                    <span class="slider"></span>
+                </label>
+            </div>
+
+            <div class="setting-item">
+                <div>
+                    <div class="setting-label">E-postvarsler</div>
+                    <div class="setting-description">Motta varsler på e-post</div>
+                </div>
+                <label class="toggle-switch">
+                    <input type="checkbox" id="emailNotifications">
+                    <span class="slider"></span>
+                </label>
+            </div>
+        </div>
+
+        <!-- Privacy -->
+        <div class="settings-section">
+            <div class="section-title">🔒 Personvern</div>
+            
+            <div class="setting-item">
+                <div>
+                    <div class="setting-label">Vis telefonnummer</div>
+                    <div class="setting-description">La andre se ditt telefonnummer</div>
+                </div>
+                <label class="toggle-switch">
+                    <input type="checkbox" id="showPhone" checked>
+                    <span class="slider"></span>
+                </label>
+            </div>
+
+            <div class="setting-item">
+                <div>
+                    <div class="setting-label">Vis e-post</div>
+                    <div class="setting-description">La andre se din e-postadresse</div>
+                </div>
+                <label class="toggle-switch">
+                    <input type="checkbox" id="showEmail">
+                    <span class="slider"></span>
+                </label>
+            </div>
+
+            <div class="setting-item">
+                <div>
+                    <div class="setting-label">Offentlig profil</div>
+                    <div class="setting-description">La profilen din være synlig for alle</div>
+                </div>
+                <label class="toggle-switch">
+                    <input type="checkbox" id="publicProfile" checked>
+                    <span class="slider"></span>
+                </label>
+            </div>
+        </div>
+
+        <!-- Security -->
+        <div class="settings-section">
+            <div class="section-title">🔐 Sikkerhet</div>
+            
+            <div class="form-group">
+                <label>Nytt passord</label>
+                <input type="password" id="newPassword" placeholder="Skriv inn nytt passord">
+            </div>
+
+            <div class="form-group">
+                <label>Bekreft passord</label>
+                <input type="password" id="confirmPassword" placeholder="Bekreft nytt passord">
+            </div>
+
+            <button class="btn btn-primary" onclick="changePassword()">🔑 Endre passord</button>
+        </div>
+
+        <!-- Danger Zone -->
+        <div class="settings-section">
+            <div class="section-title">⚠️ Farlig sone</div>
+            
+            <button class="btn btn-danger" onclick="deleteAccount()">
+                🗑️ Slett konto
+            </button>
+        </div>
+    </div>
+
+    <!-- Bottom Navigation -->
+    <div class="bottom-nav">
+        <div class="nav-item" onclick="location.href='home.html'">
+            <div class="nav-icon">🏠</div>
+            <div class="nav-label">Hjem</div>
+        </div>
+        <div class="nav-item" onclick="location.href='communication.html'">
+            <div class="nav-icon">💬</div>
+            <div class="nav-label">Chat</div>
+        </div>
+        <div class="nav-item" onclick="location.href='post-job.html'">
+            <div class="nav-icon">➕</div>
+            <div class="nav-label">Ny jobb</div>
+        </div>
+        <div class="nav-item" onclick="location.href='rating.html'">
+            <div class="nav-icon">⭐</div>
+            <div class="nav-label">Rangeringer</div>
+        </div>
+        <div class="nav-item" onclick="location.href='profile.html'">
+            <div class="nav-icon">👤</div>
+            <div class="nav-label">Profil</div>
+        </div>
+    </div>
+
+    <script src="settings.js"></script>
+</body>
+</html>
