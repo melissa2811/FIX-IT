@@ -945,3 +945,121 @@ document.addEventListener('DOMContentLoaded', function() {
             break;
     }
 });
+
+//home pages sine sj 
+ // Job database
+        const jobs = [
+            {
+                id: 1,
+                title: 'Barnepass i helgen',
+                category: 'Barnepass',
+                location: 'Halden',
+                price: '300',
+                duration: '3-4 timer',
+                date: 'Lørdag 6. jan',
+                description: 'Trenger noen til å passe 2 barn (5 og 8 år) lørdag ettermiddag.',
+                poster: 'Lisa Berg'
+            },
+            {
+                id: 2,
+                title: 'Lufting av hund 2 ganger daglig',
+                category: 'Dyrepass',
+                location: 'Fredrikstad',
+                price: '200',
+                duration: '30 minutter',
+                date: 'Hver dag',
+                description: 'Søker noen som kan lufte golden retriever morgen og kveld.',
+                poster: 'Tom Hansen'
+            },
+            {
+                id: 3,
+                title: 'Snørydding av innkjørsel',
+                category: 'Snørydding',
+                location: 'Sarpsborg',
+                price: '250',
+                duration: '1 time',
+                date: 'I dag',
+                description: 'Trenger hjelp til å måke snø fra innkjørsel og fortau.',
+                poster: 'Anne Johansen'
+            },
+            {
+                id: 4,
+                title: 'Hjelp med hagearbeid',
+                category: 'Hage',
+                location: 'Halden',
+                price: '400',
+                duration: '2-3 timer',
+                date: 'I dag',
+                description: 'Trenger hjelp til å rake løv og rydde i hagen.',
+                poster: 'Anne Johansen'
+            }
+        ];
+
+        let currentFilter = {
+            location: 'all',
+            category: 'all'
+        };
+
+        function filterByLocation(location) {
+            currentFilter.location = location;
+            
+            document.querySelectorAll('.location-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            
+            displayJobs();
+        }
+
+        function filterByCategory() {
+            const categorySelect = document.getElementById('categorySelect');
+            if (categorySelect) {
+                currentFilter.category = categorySelect.value;
+                displayJobs();
+            }
+        }
+
+        function displayJobs() {
+            let filteredJobs = jobs;
+            
+            if (currentFilter.location !== 'all') {
+                filteredJobs = filteredJobs.filter(job => job.location === currentFilter.location);
+            }
+            
+            if (currentFilter.category !== 'all') {
+                filteredJobs = filteredJobs.filter(job => job.category === currentFilter.category);
+            }
+            
+            const jobsList = document.getElementById('jobsList');
+            if (!jobsList) return;
+            
+            if (filteredJobs.length === 0) {
+                jobsList.innerHTML = `
+                    <div style="text-align: center; padding: 40px; color: #5D6E75;">
+                        <p style="font-size: 1.2em; margin-bottom: 10px;">Ingen jobber funnet</p>
+                        <p>Prøv å endre filtrene dine</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            jobsList.innerHTML = filteredJobs.map(job => `
+                <div class="job-card" onclick="viewJobDetail(${job.id})">
+                    <div class="job-title">${job.title}</div>
+                    <div class="job-category">${job.category}</div>
+                    <div class="job-details">🕒 ${job.duration} • 📅 ${job.date}</div>
+                    <div class="job-price">${job.price} kr</div>
+                    <div class="job-location">📍 ${job.location}</div>
+                </div>
+            `).join('');
+        }
+
+        function viewJobDetail(jobId) {
+            alert('Jobb ID: ' + jobId + ' valgt!');
+            // You can navigate to payment page here
+        }
+
+        // Initialize on load
+        document.addEventListener('DOMContentLoaded', function() {
+            displayJobs();
+        });
