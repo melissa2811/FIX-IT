@@ -1063,3 +1063,27 @@ document.addEventListener('DOMContentLoaded', function() {
         document.addEventListener('DOMContentLoaded', function() {
             displayJobs();
         });
+
+        // Register Modal Functions
+        function showRegisterOptions() {
+            const modal = document.getElementById('registerModal');
+            if (modal) {
+                modal.classList.add('active');
+            }
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('registerModal');
+            if (modal) {
+                modal.classList.remove('active');
+            }
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('registerModal');
+            if (modal && event.target === modal) {
+                modal.classList.remove('active');
+            }
+        }
+        
