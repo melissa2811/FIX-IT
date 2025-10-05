@@ -2209,3 +2209,252 @@ input:checked + .slider:hover {
         font-size: 16px; /* Prevents zoom on iOS */
     }
 }
+
+/* ===================================
+   TOP NAVIGATION BAR
+   =================================== */
+
+.top-nav-main {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #2F3456;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+}
+
+.nav-brand {
+    cursor: pointer;
+}
+
+.brand-logo {
+    font-size: 2em;
+    font-weight: 800;
+    color: #8BA794;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.nav-links {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    color: #BAC6B8;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: all 0.3s;
+}
+
+.nav-link:hover {
+    background: rgba(139, 167, 148, 0.2);
+    color: #8BA794;
+}
+
+.nav-link.active {
+    background: #8BA794;
+    color: white;
+}
+
+.nav-icon {
+    font-size: 1.3em;
+}
+
+.nav-text {
+    font-weight: 600;
+    font-size: 0.95em;
+}
+
+/* Adjust body padding to account for fixed top nav */
+body {
+    padding-top: 70px;
+}
+
+/* Remove bottom navigation if you want */
+.bottom-nav {
+    display: none;
+}
+
+/* Profile Menu (same as before) */
+.profile-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+}
+
+.profile-menu-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(47, 52, 86, 0.8);
+}
+
+.profile-menu-content {
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    min-width: 250px;
+    animation: slideDown 0.3s ease-out;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.profile-menu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #E9E4DC;
+}
+
+.profile-menu-header h3 {
+    color: #2F3456;
+    font-size: 1.3em;
+}
+
+.close-menu-btn {
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    color: #5D6E75;
+    cursor: pointer;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.3s;
+}
+
+.close-menu-btn:hover {
+    background: #E9E4DC;
+    color: #2F3456;
+}
+
+.profile-menu-items {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.menu-item:hover {
+    background: #E9E4DC;
+}
+
+.menu-icon {
+    font-size: 1.5em;
+    width: 35px;
+    text-align: center;
+}
+
+.menu-text {
+    color: #2F3456;
+    font-weight: 600;
+    font-size: 1em;
+}
+
+.menu-divider {
+    height: 2px;
+    background: #E9E4DC;
+    margin: 10px 0;
+}
+
+.menu-item-danger {
+    color: #dc3545;
+}
+
+.menu-item-danger .menu-text {
+    color: #dc3545;
+}
+
+.menu-item-danger:hover {
+    background: #dc3545;
+}
+
+.menu-item-danger:hover .menu-text,
+.menu-item-danger:hover .menu-icon {
+    color: white;
+}
+
+/* ===================================
+   RESPONSIVE DESIGN
+   =================================== */
+
+@media (max-width: 768px) {
+    .nav-text {
+        display: none;
+    }
+    
+    .nav-links {
+        gap: 5px;
+    }
+    
+    .nav-link {
+        padding: 10px;
+    }
+    
+    .brand-logo {
+        font-size: 1.5em;
+    }
+    
+    .nav-container {
+        padding: 0 10px;
+    }
+    
+    .profile-menu-content {
+        right: 10px;
+        left: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-icon {
+        font-size: 1.5em;
+    }
+}
