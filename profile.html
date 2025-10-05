@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FixIt - Min Profil</title>
+    <link rel="stylesheet" href="profile.css">
+</head>
+<body>
+    <div class="top-nav">
+        <button class="back-btn" onclick="location.href='home.html'">←</button>
+        <h2>Min Profil</h2>
+        <div style="width: 30px;"></div>
+    </div>
+
+    <div class="profile-container">
+        <!-- Profile Header -->
+        <div class="profile-header">
+            <div class="profile-avatar-large" id="profileAvatar">J</div>
+            <div class="profile-name" id="profileName">Jonas Hansen</div>
+            <div class="profile-type" id="profileType">🛠️ Hjelper</div>
+            <div class="profile-rating">
+                ⭐⭐⭐⭐⭐ <span style="color: #5D6E75;">4.8</span>
+            </div>
+            <div class="profile-stats">
+                <div class="stat-item">
+                    <div class="stat-number" id="completedJobs">24</div>
+                    <div class="stat-label">Fullførte jobber</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" id="successRate">98%</div>
+                    <div class="stat-label">Suksessrate</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" id="memberSince">2023</div>
+                    <div class="stat-label">Medlem siden</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Personal Information -->
+        <div class="profile-section">
+            <div class="section-title">📋 Personlig informasjon</div>
+            <div class="info-row">
+                <span class="info-label">E-post</span>
+                <span class="info-value" id="userEmail">jonas.hansen@mail.no</span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">Telefon</span>
+                <span class="info-value" id="userPhone">123 45 678</span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">Sted</span>
+                <span class="info-value" id="userLocation">Halden</span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">Alder</span>
+                <span class="info-value" id="userAge">25 år</span>
+            </div>
+        </div>
+
+        <!-- Badges & Verifications -->
+        <div class="profile-section">
+            <div class="section-title">🏆 Merker & Verifiseringer</div>
+            <div class="badge-container">
+                <div class="badge">✓ BankID Verifisert</div>
+                <div class="badge">⭐ Topprangert</div>
+                <div class="badge">🔥 Aktiv bruker</div>
+                <div class="badge">💼 Profesjonell</div>
+            </div>
+        </div>
+
+        <!-- Skills/Categories -->
+        <div class="profile-section">
+            <div class="section-title">🛠️ Ferdigheter & Kategorier</div>
+            <div class="skill-item">
+                <span class="skill-name">🌳 Hagearbeid</span>
+                <span class="skill-level">Erfaren</span>
+            </div>
+            <div class="skill-item">
+                <span class="skill-name">❄️ Snørydding</span>
+                <span class="skill-level">Ekspert</span>
+            </div>
+            <div class="skill-item">
+                <span class="skill-name">🧹 Rengjøring</span>
+                <span class="skill-level">Erfaren</span>
+            </div>
+            <div class="skill-item">
+                <span class="skill-name">📦 Flytting</span>
+                <span class="skill-level">Nybegynner</span>
+            </div>
+        </div>
+
+        <!-- About Me -->
+        <div class="profile-section">
+            <div class="section-title">💬 Om meg</div>
+            <p style="color: #5D6E75; line-height: 1.6;">
+                Hei! Jeg heter Jonas og er en pålitelig hjelper i Halden-området. Jeg har flere års erfaring med hagearbeid og snørydding. Jeg er punktlig, arbeider effektivt og sørger alltid for at jobben blir gjort ordentlig. Jeg er tilgjengelig på kveldstid og i helger.
+            </p>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="profile-section">
+            <div class="action-buttons">
+                <button class="btn btn-primary" onclick="editProfile()">
+                    ✏️ Rediger profil
+                </button>
+                <button class="btn btn-secondary" onclick="viewSettings()">
+                    ⚙️ Innstillinger
+                </button>
+                <button class="btn btn-secondary" onclick="viewPaymentMethods()">
+                    💳 Betalingsmetoder
+                </button>
+                <button class="btn btn-danger" onclick="logout()">
+                    🚪 Logg ut
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottom Navigation -->
+    <div class="bottom-nav">
+        <div class="nav-item" onclick="location.href='home.html'">
+            <div class="nav-icon">🏠</div>
+            <div class="nav-label">Hjem</div>
+        </div>
+        <div class="nav-item" onclick="location.href='communication.html'">
+            <div class="nav-icon">💬</div>
+            <div class="nav-label">Chat</div>
+        </div>
+        <div class="nav-item" onclick="location.href='post-job.html'">
+            <div class="nav-icon">➕</div>
+            <div class="nav-label">Ny jobb</div>
+        </div>
+        <div class="nav-item" onclick="location.href='rating.html'">
+            <div class="nav-icon">⭐</div>
+            <div class="nav-label">Rangeringer</div>
+        </div>
+        <div class="nav-item active" onclick="location.href='profile.html'">
+            <div class="nav-icon">👤</div>
+            <div class="nav-label">Profil</div>
+        </div>
+    </div>
+
+    <script src="profile.js"></script>
+</body>
+</html>

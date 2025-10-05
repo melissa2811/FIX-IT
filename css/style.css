@@ -1393,3 +1393,391 @@ input[type="file"] {
         .nav-label {
             font-size: 0.75em;
         }
+
+
+        /* ===================================
+   FIXIT PROFILE PAGE - STYLES
+   Color Palette:
+   #2F3456 - Space Cadet (Dark Blue)
+   #5D6E75 - Payne's Gray (Medium Gray)
+   #8BA794 - Cambridge Blue (Sage Green)
+   #BAC6B8 - Ash Gray (Light Sage)
+   #E9E4DC - Alabaster (Off-White)
+   =================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background: #E9E4DC;
+    overflow-x: hidden;
+    min-height: 100vh;
+    padding-bottom: 80px;
+}
+
+/* ===================================
+   TOP NAVIGATION
+   =================================== */
+
+.top-nav {
+    background: #2F3456;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.back-btn {
+    background: transparent;
+    border: none;
+    color: #8BA794;
+    font-size: 1.5em;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.back-btn:hover {
+    color: #BAC6B8;
+}
+
+.top-nav h2 {
+    color: #E9E4DC;
+    font-size: 1.5em;
+}
+
+/* ===================================
+   PROFILE CONTAINER
+   =================================== */
+
+.profile-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+/* ===================================
+   PROFILE HEADER
+   =================================== */
+
+.profile-header {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.profile-avatar-large {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #8BA794, #BAC6B8);
+    margin: 0 auto 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3em;
+    color: white;
+    font-weight: 700;
+    border: 5px solid #E9E4DC;
+}
+
+.profile-name {
+    font-size: 1.8em;
+    color: #2F3456;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.profile-type {
+    color: #5D6E75;
+    font-size: 1em;
+    margin-bottom: 15px;
+}
+
+.profile-rating {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.profile-stats {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 1.5em;
+    color: #8BA794;
+    font-weight: 700;
+}
+
+.stat-label {
+    color: #5D6E75;
+    font-size: 0.9em;
+}
+
+/* ===================================
+   PROFILE SECTIONS
+   =================================== */
+
+.profile-section {
+    background: white;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+.section-title {
+    font-size: 1.3em;
+    color: #2F3456;
+    font-weight: 700;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* ===================================
+   INFO ROWS
+   =================================== */
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid #E9E4DC;
+}
+
+.info-row:last-child {
+    border-bottom: none;
+}
+
+.info-label {
+    color: #5D6E75;
+    font-weight: 600;
+}
+
+.info-value {
+    color: #2F3456;
+}
+
+/* ===================================
+   BADGES
+   =================================== */
+
+.badge-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.badge {
+    background: #8BA794;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* ===================================
+   SKILLS
+   =================================== */
+
+.skill-item {
+    background: #E9E4DC;
+    padding: 10px 15px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.skill-item:last-child {
+    margin-bottom: 0;
+}
+
+.skill-name {
+    color: #2F3456;
+    font-weight: 600;
+}
+
+.skill-level {
+    color: #8BA794;
+    font-size: 0.9em;
+}
+
+/* ===================================
+   ACTION BUTTONS
+   =================================== */
+
+.action-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.btn {
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.btn-primary {
+    background: #8BA794;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #2F3456;
+}
+
+.btn-secondary {
+    background: white;
+    color: #2F3456;
+    border: 2px solid #BAC6B8;
+}
+
+.btn-secondary:hover {
+    border-color: #8BA794;
+}
+
+.btn-danger {
+    background: transparent;
+    color: #dc3545;
+    border: 2px solid #dc3545;
+}
+
+.btn-danger:hover {
+    background: #dc3545;
+    color: white;
+}
+
+/* ===================================
+   BOTTOM NAVIGATION
+   =================================== */
+
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #2F3456;
+    display: flex;
+    justify-content: space-around;
+    padding: 12px 0;
+    box-shadow: 0 -5px 15px rgba(0,0,0,0.1);
+    z-index: 1000;
+}
+
+.nav-item {
+    color: #BAC6B8;
+    text-align: center;
+    cursor: pointer;
+    transition: color 0.3s;
+    padding: 5px 10px;
+}
+
+.nav-item:hover {
+    color: #8BA794;
+}
+
+.nav-item.active {
+    color: #8BA794;
+}
+
+.nav-icon {
+    font-size: 1.5em;
+    margin-bottom: 2px;
+}
+
+.nav-label {
+    font-size: 0.75em;
+}
+
+/* ===================================
+   RESPONSIVE DESIGN
+   =================================== */
+
+@media (max-width: 768px) {
+    .profile-stats {
+        gap: 15px;
+    }
+
+    .stat-number {
+        font-size: 1.3em;
+    }
+
+    .profile-container {
+        padding: 0 15px;
+    }
+
+    .profile-header {
+        padding: 20px;
+    }
+
+    .profile-name {
+        font-size: 1.5em;
+    }
+
+    .profile-avatar-large {
+        width: 100px;
+        height: 100px;
+        font-size: 2.5em;
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-stats {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .stat-item {
+        border-bottom: 1px solid #E9E4DC;
+        padding-bottom: 10px;
+    }
+
+    .stat-item:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+
+    .badge-container {
+        justify-content: center;
+    }
+
+    .info-row {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .section-title {
+        font-size: 1.1em;
+    }
+}
